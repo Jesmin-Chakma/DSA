@@ -1,1 +1,39 @@
+//This is selection sort code with every description. I hope it will be very
+//easy to understand. 
+#include<bits/stdc++.h>
+using namespace std;
+int main(){                 
+    int n;
+    cin>>n;
+    int a[n];
+    //This loop is use for taking array input.
+    for(int i = 0; i< n; i++){
+        cin>>a[i];
+    }
+    //This loop is use for to find the minimum index from the array
+    //We assign the first index value as minimum index.
+    //minIndex = i;
+    for(int i = 0; i < n; i++){
+        int minIndex  = i;
+        //This loop is use for comparison between first and second index 
+        //a[i]<= a[i+1].
+        //if the second index value is lower than the first index value then 
+        //we have assign it as a minindex.
+        for(int j = i+1; j<n; j++ ){
+            if(a[j] < a[minIndex]){
+                minIndex = j;
+            }
+        }
+        //Using the built in function we are comaring index values and swap 
+        //with each other.
+        swap(a[i],a[minIndex]);
 
+    }
+    cout<<"Sorted array are = " <<'\n';
+    //Print the array.
+    for(int i = 0; i<n; i++){
+        cout<< a[i] <<endl;
+    }
+    return 0;
+    
+}
